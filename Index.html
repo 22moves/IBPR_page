@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IBPR — Institute for Business Process Research</title>
+<meta name="description" content="An independent research initiative in Belgrade studying how businesses operate, where information gets lost, and how better data can improve everyday decisions.">
+<meta property="og:title" content="Institute for Business Process Research">
+<meta property="og:description" content="Understand your business beyond the numbers. An independent study of business processes and information flows.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f2ef;--fg:#1c1e21;--mute:#575c63;--line:#d2d0ca;--acc:#2447b8;--on:#fff;--surf:#eae9e4;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15171a;--fg:#ebeae6;--mute:#a3a7ad;--line:#35393e;--acc:#8aa5f7;--on:#12141a;--surf:#1d2024}}
+:root[data-theme="dark"]{--bg:#15171a;--fg:#ebeae6;--mute:#a3a7ad;--line:#35393e;--acc:#8aa5f7;--on:#12141a;--surf:#1d2024}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 "Hanken Grotesk",system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:1120px;margin:auto;padding:0 clamp(20px,5vw,48px)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:24px;height:60px}
+.brand{font:500 20px "Newsreader",Georgia,serif;letter-spacing:.02em;margin-right:auto;color:var(--fg);text-decoration:none}
+nav{display:flex;gap:22px;font-size:14px}nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--fg)}
+@media(max-width:900px){nav{display:none}}
+.lang button{background:none;border:0;color:var(--mute);font:500 14px inherit;font-family:inherit;padding:6px 4px;cursor:pointer}
+.lang button[aria-pressed=true]{color:var(--fg);text-decoration:underline;text-underline-offset:4px}
+section{padding:clamp(72px,11vw,130px) 0;border-top:1px solid var(--line)}
+header+section,#top{border-top:0}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:400;margin:0;letter-spacing:-.015em}
+h1{font-size:clamp(42px,8vw,98px);line-height:1.02;max-width:12ch}
+h2{font-size:clamp(32px,5vw,58px);line-height:1.08;max-width:18ch;margin-bottom:28px}
+h3{font-size:22px;line-height:1.2;margin-bottom:8px}
+p{margin:0 0 1em;max-width:62ch}.lead{font-size:clamp(18px,2vw,21px);color:var(--mute)}
+.small{font-size:14px;color:var(--mute)}
+.btn{display:inline-block;padding:14px 24px;background:var(--acc);color:var(--on);border:1px solid var(--acc);font:600 15px "Hanken Grotesk",sans-serif;cursor:pointer;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--fg)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 20px}
+#top{position:relative;overflow:hidden;padding-top:clamp(56px,9vw,110px)}
+#net{position:absolute;right:-4%;top:0;width:62%;height:100%;opacity:.9;z-index:0}
+#top .wrap{position:relative;z-index:1}
+#top .lead{max-width:50ch;margin-top:28px}
+@media(max-width:760px){#net{width:120%;right:-30%;opacity:.35}}
+#net line{stroke:var(--line);stroke-width:1}#net .a{stroke:var(--acc)}#net circle{fill:var(--bg);stroke:var(--fg);stroke-width:1}#net .h{fill:var(--acc);stroke:none}
+@keyframes flow{to{stroke-dashoffset:-24}}#net .a{stroke-dasharray:4 8;animation:flow 3s linear infinite}
+.qs{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 48px}
+.qs li{padding:18px 0;border-top:1px solid var(--line);font-family:"Newsreader",Georgia,serif;font-size:21px;line-height:1.3}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:40px}
+.grid>div{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.grid p{color:var(--mute);font-size:16px;margin:0}.grid .ex{margin-top:10px;font-size:14px}
+
+.steps{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.steps li{position:relative;padding-top:26px;border-top:1px solid var(--fg)}
+.steps li::before{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;background:var(--acc);border-radius:50%}
+.steps b{display:block;font:400 15px "Hanken Grotesk";color:var(--acc);margin-bottom:6px}
+.steps p{font-size:15px;color:var(--mute)}
+@media(max-width:820px){.steps{grid-template-columns:1fr;gap:0;border-left:1px solid var(--fg);margin-left:4px}.steps li{border-top:0;padding:0 0 28px 28px}.steps li::before{top:6px;left:-5px}}
+.scroll{overflow-x:auto;margin-top:36px}.scroll svg{min-width:540px;width:100%;height:auto;display:block}
+.scroll rect{fill:var(--bg);stroke:var(--fg);stroke-width:1}.scroll .c{fill:var(--acc);stroke:none}.scroll .c+text{fill:var(--on)}
+.scroll path{stroke:var(--mute);fill:none;stroke-width:1}.scroll text{fill:var(--fg);font:500 13px "Hanken Grotesk",sans-serif}
+.panel{border:1px solid var(--line);background:var(--surf);padding:clamp(20px,4vw,40px);margin-top:36px;max-width:760px}
+.facts{margin:20px 0 28px;padding:0;list-style:none}.facts li{padding:8px 0 8px 22px;position:relative;border-bottom:1px solid var(--line)}
+.facts li::before{content:"";position:absolute;left:0;top:18px;width:8px;height:1px;background:var(--acc);box-shadow:0 0 0 .5px var(--acc)}
+.bar{height:3px;background:var(--line);margin-bottom:24px}.bar i{display:block;height:100%;background:var(--acc);transition:width .3s}
+fieldset{border:0;margin:0;padding:0}legend{font:400 clamp(24px,3.4vw,32px)/1.2 "Newsreader",Georgia,serif;margin-bottom:18px;padding:0}
+.opt{display:flex;gap:12px;align-items:center;padding:13px 16px;border:1px solid var(--line);background:var(--bg);margin-top:8px;cursor:pointer}
+.opt:has(input:checked){border-color:var(--acc);box-shadow:inset 3px 0 0 var(--acc)}.opt:focus-within{outline:2px solid var(--acc);outline-offset:2px}
+.opt input{accent-color:var(--acc);width:18px;height:18px;flex:none}
+textarea,input[type=text],input[type=email]{width:100%;font:inherit;padding:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg);margin:6px 0 14px}
+label.f{display:block;font-size:14px;color:var(--mute)}
+.nav2{display:flex;justify-content:space-between;gap:12px;margin-top:28px;align-items:center}
+.alt{background:var(--surf)}
+footer{border-top:1px solid var(--line);padding:48px 0 56px;font-size:14px;color:var(--mute)}
+footer .wrap{display:grid;gap:14px}footer b{color:var(--fg)}
+details{max-width:70ch}summary{cursor:pointer;color:var(--fg)}
+@media(prefers-reduced-motion:reduce){#net .a{animation:none}html{scroll-behavior:auto}.bar i{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#top" aria-label="IBPR">IBPR</a>
+<nav aria-label="Sections"><a href="#question" data-t="n1">Research question</a><a href="#areas" data-t="n2">Areas</a><a href="#method" data-t="n3">Method</a><a href="#tech" data-t="n4">Technology</a><a href="#about" data-t="n6">About</a><a href="#participate" data-t="n5">Participate</a></nav>
+<div class="lang" role="group" aria-label="Language"><button data-l="en" aria-pressed="true">EN</button><button data-l="sr" aria-pressed="false">SR</button><button data-l="ru" aria-pressed="false">RU</button></div>
+</div></header>
+<main>
+<section id="top">
+<svg id="net" aria-hidden="true" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice"></svg>
+<div class="wrap">
+<p class="small" data-t="h_eye">Independent research initiative, Belgrade, Serbia</p>
+<h1 data-t="h_title">Understand Your Business Beyond the Numbers.</h1>
+<p class="lead" data-t="h_sub">Every business generates valuable information. Much of it remains scattered, unmeasured, or unused. We study how organizations operate, identify information gaps, and explore opportunities to make business processes more transparent, measurable, and efficient.</p>
+<div class="row"><a class="btn" href="#participate" data-start data-t="cta1">Start Business Assessment</a><a class="btn ghost" href="#method" data-t="cta2">Explore Our Approach</a></div>
+<p class="small" data-t="h_note">About 4 minutes. Anonymous by default. No technical knowledge needed.</p>
+</div></section>
+
+<section id="question"><div class="wrap">
+<h2 data-t="q_title">What Happens Between the Numbers?</h2>
+<p class="lead" data-t="q_lead">Financial results and standard reports rarely show the full picture of everyday operations. These are questions many businesses find hard to answer:</p>
+<ul class="qs">
+<li data-t="q1">Where are potential customers and requests being lost?</li>
+<li data-t="q2">Which processes take more time than expected?</li>
+<li data-t="q3">What information is collected but never used?</li>
+<li data-t="q4">Which decisions depend on incomplete or outdated information?</li>
+<li data-t="q5">Where are people or equipment underused?</li>
+<li data-t="q6">Which problems only become visible after they have caused losses?</li>
+<li data-t="q7">What important events are not being measured at all?</li>
+</ul></div></section>
+
+<section id="areas" class="alt"><div class="wrap">
+<h2 data-t="a_title">Five areas of research</h2>
+<div class="grid">
+<div><h3 data-t="a1n">Customer &amp; Commercial Processes</h3><p data-t="a1d">How customers arrive, buy, and return.</p><p class="ex" data-t="a1e">Lost requests, sales performance, retention, customer behavior.</p></div>
+<div><h3 data-t="a2n">Operations &amp; Workflows</h3><p data-t="a2d">How work actually moves through the business.</p><p class="ex" data-t="a2e">Delays, duplicated work, bottlenecks, manual operations.</p></div>
+<div><h3 data-t="a3n">People &amp; Organizational Processes</h3><p data-t="a3d">How effort and information are shared between people.</p><p class="ex" data-t="a3e">Workload distribution, dependencies, internal information exchange.</p></div>
+<div><h3 data-t="a4n">Assets &amp; Infrastructure</h3><p data-t="a4d">How equipment and physical conditions affect results.</p><p class="ex" data-t="a4e">Utilization, downtime, energy use, sensor-based monitoring.</p></div>
+<div><h3 data-t="a5n">Data &amp; Decision Intelligence</h3><p data-t="a5d">Whether the right information reaches the right decision.</p><p class="ex" data-t="a5e">Data availability and quality, reporting, forecasting, metrics.</p></div>
+</div></div></section>
+
+<section id="method"><div class="wrap">
+<h2 data-t="m_title">How we research</h2>
+<p class="lead" data-t="m_lead">We understand how a business works before proposing any technology.</p>
+<ol class="steps">
+<li><b data-t="m1n">Discover</b><p data-t="m1d">Understand the business, its goals, existing processes, and operational challenges.</p></li>
+<li><b data-t="m2n">Map</b><p data-t="m2d">Identify information sources, manual actions, dependencies, missing data, and bottlenecks.</p></li>
+<li><b data-t="m3n">Evaluate</b><p data-t="m3d">Decide which problems could benefit from better measurement, data collection, integration, or automation.</p></li>
+<li><b data-t="m4n">Develop</b><p data-t="m4d">Explore and test suitable solutions, from simple workflow changes to custom data systems, intelligent agents, and sensor monitoring.</p></li>
+</ol></div></section>
+
+<section id="tech" class="alt"><div class="wrap">
+<h2 data-t="t_title">From research to technology</h2>
+<p class="lead" data-t="t_lead">Technology is a possible method, not the starting point. These are approaches we may explore once a problem is understood.</p>
+<div class="grid">
+<div><h3 data-t="t1n">Data Collection</h3><p data-t="t1d">Record information that businesses do not currently measure.</p></div>
+<div><h3 data-t="t2n">System Integration</h3><p data-t="t2d">Connect existing software, databases, spreadsheets, and business applications.</p></div>
+<div><h3 data-t="t3n">Workflow Automation</h3><p data-t="t3d">Reduce repetitive manual work and automate predictable processes.</p></div>
+<div><h3 data-t="t4n">AI &amp; Intelligent Agents</h3><p data-t="t4d">Extract, classify, and organize information from messages, documents, and other unstructured sources.</p></div>
+<div><h3 data-t="t5n">Smart Monitoring</h3><p data-t="t5d">Use sensors and connected devices to understand equipment, environments, and resource use.</p></div>
+<div><h3 data-t="t6n">Analytics &amp; Reporting</h3><p data-t="t6d">Turn raw information into indicators, reports, predictions, and alerts.</p></div>
+</div>
+<div class="scroll"><svg viewBox="0 0 640 230" role="img" aria-labelledby="dt"><title id="dt" data-t="d_t">Diagram: spreadsheets, software, messages and sensors become structured data, then indicators, reports and alerts.</title>
+<path d="M190 37H230Q250 37 250 57V100Q250 115 270 115M190 87H235Q250 87 250 100M190 143H235Q250 143 250 130M190 193H230Q250 193 250 173V130Q250 115 270 115M390 115H430Q445 115 445 100V75Q445 57 465 57H470M390 115H470M390 115H430Q445 115 445 130V155Q445 173 465 173H470"/>
+<rect x="10" y="20" width="180" height="34"/><text x="22" y="42" data-t="d1">Spreadsheets</text>
+<rect x="10" y="70" width="180" height="34"/><text x="22" y="92" data-t="d2">Business software</text>
+<rect x="10" y="126" width="180" height="34"/><text x="22" y="148" data-t="d3">Messages &amp; documents</text>
+<rect x="10" y="176" width="180" height="34"/><text x="22" y="198" data-t="d4">Sensors &amp; devices</text>
+<rect class="c" x="270" y="80" width="120" height="70"/><text x="330" y="120" text-anchor="middle" data-t="d5">Structured data</text>
+<rect x="470" y="40" width="160" height="34"/><text x="482" y="62" data-t="d6">Indicators</text>
+<rect x="470" y="98" width="160" height="34"/><text x="482" y="120" data-t="d7">Reports</text>
+<rect x="470" y="156" width="160" height="34"/><text x="482" y="178" data-t="d8">Alerts</text></svg></div>
+</div></section>
+
+<section id="participate"><div class="wrap">
+<h2 data-t="p_title">Help Us Understand How Your Business Really Works.</h2>
+<p class="lead" data-t="p_lead">We are conducting an independent study of business processes, information flows, and operational challenges. Your experience can help identify problems that often remain invisible in conventional business reporting.</p>
+<div class="panel" id="intro">
+<ul class="facts"><li data-t="p1">Approximately 4 minutes.</li><li data-t="p2">No technical knowledge required.</li><li data-t="p3">No financial documents or system access required.</li><li data-t="p4">Responses help build a research base and identify opportunities for further study.</li></ul>
+<button class="btn" id="start" data-t="p_btn">Start the Business Assessment</button>
+</div>
+<div class="panel" id="quiz" hidden aria-live="polite"></div>
+</div></section>
+
+<section id="about" class="alt"><div class="wrap">
+<h2 data-t="ab_title">Research Before Solutions.</h2>
+<p class="lead" data-t="ab1">IBPR is an independent research initiative exploring how businesses collect information, manage operations, and make decisions.</p>
+<p data-t="ab2">We are interested in the gap between how organizations operate and how well they can observe, measure, and improve their processes.</p>
+<p data-t="ab3">Our research begins with real operational challenges, not predetermined technologies.</p>
+<p class="small" data-t="ab4">The initiative is at an early stage: we are developing our research methodology and building relationships with businesses.</p>
+</div></section>
+
+<section id="final"><div class="wrap">
+<h2 data-t="f_title">Better Understanding. Better Decisions.</h2>
+<p class="lead" data-t="f_sub">Start with a question about your business. The answers may reveal opportunities you haven’t considered.</p>
+<div class="row"><a class="btn" href="#participate" data-start data-t="f_btn">Participate in Our Research</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">
+<div><b>IBPR</b> — Institute for Business Process Research · Belgrade, Serbia</div>
+<div data-t="ft_c">Contact details will be published here once verified.</div>
+<details id="privacy"><summary data-t="pv_s">Privacy notice (draft)</summary>
+<p data-t="pv1">We collect answers about business processes to understand common operational problems. Answers are stored in structured form, analyzed in aggregate, and never published individually. Name and email are saved only if you tick the separate consent box, and only to contact you about this research. You can ask for access or deletion of your data through the contact details above.</p>
+<p data-t="pv2">Draft: to be reviewed against Serbian and EU data protection requirements before launch.</p></details>
+<div class="lang" role="group" aria-label="Language"><button data-l="en" aria-pressed="true">English</button> · <button data-l="sr" aria-pressed="false">Srpski</button> · <button data-l="ru" aria-pressed="false">Русский</button></div>
+</div></footer>
+
+<script>
+/* ===== CONTENT: Serbian (Latin) dictionary. English lives in the HTML above (keys = data-t). ===== */
+const SR={n1:'Pitanje',n2:'Oblasti',n3:'Metod',n4:'Tehnologija',n5:'Učešće',n6:'O institutu',
+h_eye:'Nezavisna istraživačka inicijativa, Beograd, Srbija',h_title:'Razumite svoje poslovanje izvan brojeva.',
+h_sub:'Svaka firma stvara vredne informacije. Veliki deo ostaje rasut, neizmeren ili neiskorišćen. Proučavamo kako organizacije funkcionišu, otkrivamo informacione praznine i istražujemo kako poslovne procese učiniti transparentnijim, merljivijim i efikasnijim.',
+cta1:'Započnite procenu poslovanja',cta2:'Upoznajte naš pristup',h_note:'Oko 4 minuta. Podrazumevano anonimno. Tehničko znanje nije potrebno.',
+q_title:'Šta se dešava između brojeva?',q_lead:'Finansijski rezultati i standardni izveštaji retko prikazuju celu sliku svakodnevnog rada. Ovo su pitanja na koja mnoge firme teško odgovaraju:',
+q1:'Gde se gube potencijalni kupci i upiti?',q2:'Koji procesi traju duže nego što se očekuje?',q3:'Koje se informacije prikupljaju, a nikad ne koriste?',q4:'Koje odluke zavise od nepotpunih ili zastarelih informacija?',q5:'Gde su ljudi ili oprema nedovoljno iskorišćeni?',q6:'Koji problemi postanu vidljivi tek kada već nastane šteta?',q7:'Koji važni događaji se uopšte ne mere?',
+a_title:'Pet oblasti istraživanja',
+a1n:'Kupci i komercijalni procesi',a1d:'Kako kupci stižu, kupuju i vraćaju se.',a1e:'Izgubljeni upiti, prodajni učinak, zadržavanje kupaca, ponašanje kupaca.',
+a2n:'Operacije i tokovi rada',a2d:'Kako se posao zaista kreće kroz firmu.',a2e:'Kašnjenja, dupliran rad, uska grla, ručne operacije.',
+a3n:'Ljudi i organizacioni procesi',a3d:'Kako se napor i informacije dele među ljudima.',a3e:'Raspodela opterećenja, zavisnosti, interna razmena informacija.',
+a4n:'Sredstva i infrastruktura',a4d:'Kako oprema i fizički uslovi utiču na rezultate.',a4e:'Iskorišćenost, zastoji, potrošnja energije, nadzor senzorima.',
+a5n:'Podaci i inteligencija odlučivanja',a5d:'Da li prava informacija stiže do prave odluke.',a5e:'Dostupnost i kvalitet podataka, izveštavanje, prognoze, metrike.',
+m_title:'Kako istražujemo',m_lead:'Prvo razumemo kako posao funkcioniše, tek onda razmatramo tehnologiju.',
+m1n:'Otkrivanje',m1d:'Razumemo firmu, njene ciljeve, postojeće procese i operativne izazove.',m2n:'Mapiranje',m2d:'Utvrđujemo izvore informacija, ručne radnje, zavisnosti, podatke koji nedostaju i uska grla.',m3n:'Procena',m3d:'Određujemo koji problemi mogu imati koristi od boljeg merenja, prikupljanja podataka, povezivanja ili automatizacije.',m4n:'Razvoj',m4d:'Istražujemo i testiramo odgovarajuća rešenja, od jednostavnih promena toka rada do prilagođenih sistema podataka, inteligentnih agenata i nadzora senzorima.',
+t_title:'Od istraživanja do tehnologije',t_lead:'Tehnologija je mogući metod, a ne polazna tačka. Ovo su pristupi koje možemo istražiti kada je problem razumljen.',
+t1n:'Prikupljanje podataka',t1d:'Beleženje informacija koje firme trenutno ne mere.',t2n:'Povezivanje sistema',t2d:'Povezivanje postojećeg softvera, baza podataka, tabela i poslovnih aplikacija.',t3n:'Automatizacija tokova rada',t3d:'Smanjenje ponavljajućeg ručnog rada i automatizacija predvidivih procesa.',t4n:'AI i inteligentni agenti',t4d:'Izdvajanje, razvrstavanje i organizovanje informacija iz poruka, dokumenata i drugih nestrukturiranih izvora.',t5n:'Pametni nadzor',t5d:'Senzori i povezani uređaji za razumevanje opreme, okruženja i korišćenja resursa.',t6n:'Analitika i izveštavanje',t6d:'Pretvaranje sirovih informacija u pokazatelje, izveštaje, predviđanja i upozorenja.',
+d_t:'Dijagram: tabele, softver, poruke i senzori postaju strukturirani podaci, a zatim pokazatelji, izveštaji i upozorenja.',d1:'Tabele',d2:'Poslovni softver',d3:'Poruke i dokumenti',d4:'Senzori i uređaji',d5:'Strukturirani podaci',d6:'Pokazatelji',d7:'Izveštaji',d8:'Upozorenja',
+p_title:'Pomozite nam da razumemo kako vaše poslovanje zaista funkcioniše.',p_lead:'Sprovodimo nezavisno istraživanje poslovnih procesa, tokova informacija i operativnih izazova. Vaše iskustvo može pomoći da se uoče problemi koji u uobičajenom poslovnom izveštavanju često ostaju nevidljivi.',
+p1:'Oko 4 minuta.',p2:'Tehničko znanje nije potrebno.',p3:'Nisu potrebni finansijski dokumenti ni pristup sistemima.',p4:'Odgovori pomažu da se izgradi istraživačka osnova i uoče prilike za dalje proučavanje.',p_btn:'Započnite procenu poslovanja',
+ab_title:'Istraživanje pre rešenja.',ab1:'IBPR je nezavisna istraživačka inicijativa koja proučava kako firme prikupljaju informacije, upravljaju radom i donose odluke.',ab2:'Zanima nas jaz između načina na koji organizacije posluju i toga koliko dobro mogu da posmatraju, mere i unapređuju svoje procese.',ab3:'Naše istraživanje počinje od stvarnih operativnih izazova, a ne od unapred zadatih tehnologija.',ab4:'Inicijativa je u ranoj fazi: razvijamo istraživačku metodologiju i gradimo odnose sa firmama.',
+f_title:'Bolje razumevanje. Bolje odluke.',f_sub:'Počnite pitanjem o svom poslovanju. Odgovori mogu otkriti prilike koje niste razmatrali.',f_btn:'Učestvujte u istraživanju',
+ft_c:'Kontakt podaci biće objavljeni ovde kada budu potvrđeni.',pv_s:'Obaveštenje o privatnosti (nacrt)',pv1:'Prikupljamo odgovore o poslovnim procesima da bismo razumeli uobičajene operativne probleme. Odgovori se čuvaju u strukturiranom obliku, analiziraju zbirno i nikada ne objavljuju pojedinačno. Ime i email se čuvaju samo ako označite posebnu saglasnost, i to isključivo da bismo vas kontaktirali u vezi sa ovim istraživanjem. Pristup ili brisanje podataka možete zatražiti preko gore navedenih kontakata.',pv2:'Nacrt: pre lansiranja treba ga proveriti u odnosu na srpske i evropske propise o zaštiti podataka.'};
+
+/* ===== CONFIG: form integration. Leave endpoint empty for demo mode (saves in this browser only). =====
+   Set endpoint to an n8n / Make webhook URL when self-hosting the page (published preview blocks outside requests).
+   Row columns: id, ts, lang, sector, size, role, challenges, sources, manual_hours, frequency, impact, measure, food_issues, downtime_detect, comment, consent_followup, interview, name, email */
+const CFG={endpoint:'',key:'ibpr_demo_responses'};
+
+/* ===== QUESTIONNAIRE: edit questions here. o = [value, English, Serbian] ===== */
+const Q=[
+{id:'sector',t:'single',q:['Which sector is your business in?','U kojoj delatnosti posluje vaša firma?'],o:[['retail','Retail & trade','Trgovina'],['manufacturing','Manufacturing','Proizvodnja'],['services','Professional services','Poslovne usluge'],['hospitality','Hotels & tourism','Hoteli i turizam'],['food','Restaurants, cafés & catering','Restorani, kafei i ketering'],['logistics','Logistics & transport','Logistika i transport'],['other','Other','Drugo']]},
+{id:'size',t:'single',q:['How many people work in your business?','Koliko ljudi radi u vašoj firmi?'],o:[['1-9','1–9','1–9'],['10-49','10–49','10–49'],['50-249','50–249','50–249'],['250+','250 or more','250 ili više']]},
+{id:'role',t:'single',q:['What is your role?','Koja je vaša uloga?'],o:[['owner','Owner / founder','Vlasnik / osnivač'],['director','CEO / managing director','Direktor'],['ops','Operations manager','Rukovodilac operacija'],['dept','Department manager','Rukovodilac sektora'],['other','Other','Drugo']]},
+{id:'challenges',t:'multi',q:['Which of these sound familiar?','Šta vam od ovoga zvuči poznato?'],o:[['lost_requests','Customers, orders or requests get lost','Gube se kupci, porudžbine ili upiti'],['slow','Processes take too long','Procesi traju predugo'],['manual','Duplicated or manual work','Dupliran ili ručni rad'],['unused_data','Data is collected but unused','Podaci se prikupljaju, a ne koriste'],['outdated','Decisions rely on outdated information','Odluke zavise od zastarelih informacija'],['downtime','Equipment stops or is underused','Oprema stoji ili je nedovoljno iskorišćena'],['unmeasured','Important events are not measured','Važni događaji se ne mere']]},
+{id:'food_issues',t:'multi',if:a=>a.sector=='food',q:['Which of these happen in your venue?','Šta se od ovoga dešava u vašem objektu?'],o:[['waste','Food is wasted or spoils','Hrana se baca ili kvari'],['channels','Orders from several channels (hall, phone, delivery apps) are handled separately','Porudžbine iz više kanala (sala, telefon, dostava) obrađuju se odvojeno'],['supplier','Supplier orders go by phone or messages','Porudžbine dobavljačima idu telefonom ili porukama'],['stock','Stock is counted by hand','Zalihe se broje ručno'],['foodcost','The cost of each dish is unknown','Cena svakog jela nije poznata'],['schedule','Staff schedules are made by hand','Raspored radnika pravi se ručno'],['logs','Temperature or hygiene logs are kept on paper','Evidencija temperature ili higijene vodi se na papiru'],['noshow','Reservations get lost or guests do not show up','Rezervacije se gube ili gosti ne dolaze'],['none','None of these','Ništa od navedenog']]},
+{id:'downtime_detect',t:'single',if:a=>(a.challenges||[]).includes('downtime'),q:['How do you usually find out about equipment problems?','Kako obično saznajete za probleme sa opremom?'],o:[['staff','Staff notice and report','Zaposleni primete i prijave'],['late','Only after output drops','Tek kada učinak padne'],['monitor','Some monitoring exists','Postoji delimičan nadzor'],['unknown','Not sure','Nisam siguran/na']]},
+{id:'sources',t:'multi',q:['Where does your business information live today?','Gde se danas nalaze informacije vaše firme?'],o:[['sheets','Spreadsheets','Tabele'],['software','Accounting / ERP software','Računovodstveni / ERP softver'],['messages','Email and messaging apps','Email i aplikacije za poruke'],['paper','Paper','Papir'],['calls','Phone calls','Telefonski pozivi'],['memory','People’s memory','Pamćenje ljudi'],['pos','POS / cash register system','Kasa / POS sistem']]},
+{id:'manual_hours',t:'single',q:['How many hours per week go into repetitive manual tasks?','Koliko sati nedeljno odlazi na ponavljajuće ručne poslove?'],o:[['<5','Under 5','Manje od 5'],['5-15','5–15','5–15'],['15-40','15–40','15–40'],['40+','More than 40','Više od 40'],['unknown','Not sure','Nisam siguran/na']]},
+{id:'frequency',t:'single',q:['How often do these problems appear?','Koliko se često ovi problemi javljaju?'],o:[['daily','Daily','Svakodnevno'],['weekly','Weekly','Nedeljno'],['monthly','Monthly','Mesečno'],['rarely','Rarely','Retko']]},
+{id:'impact',t:'single',q:['How much do they affect results?','Koliko utiču na rezultate?'],o:[['minor','Minor','Malo'],['moderate','Moderately','Umereno'],['significant','Significantly','Značajno'],['unknown','Hard to say','Teško je reći']]},
+{id:'measure',t:'multi',q:['What would you most like to see measured?','Šta biste najviše voleli da se meri?'],o:[['requests','Customer requests and outcomes','Upiti kupaca i ishodi'],['time','Time spent per process','Vreme po procesu'],['workload','Workload of people','Opterećenje ljudi'],['equipment','Equipment use and downtime','Korišćenje opreme i zastoji'],['costs','Costs and energy','Troškovi i energija'],['stock','Stock, waste and dish cost','Zalihe, rasipanje i cena jela']]},
+{id:'comment',t:'text',q:['Optional: what is the one problem you would solve first?','Neobavezno: koji biste problem prvo rešili?']},
+{id:'contact',t:'contact',q:['Optional: stay in touch','Neobavezno: ostanimo u kontaktu']}];
+
+/* ===== UI strings used by script: [English, Serbian] ===== */
+const S={next:['Continue','Nastavi'],back:['Back','Nazad'],send:['Submit','Pošalji'],of:['of','od'],ph:['Describe in a sentence or two (no confidential data)','Opišite u jednoj-dve rečenice (bez poverljivih podataka)'],
+name:['Name','Ime'],email:['Email','Email'],iv:['I am open to a short research interview','Spreman/na sam za kratak istraživački intervju'],cs:['I agree to be contacted about this research. Without this, name and email are not saved.','Pristajem da me kontaktirate u vezi sa istraživanjem. Bez toga se ime i email ne čuvaju.'],
+th:['Thank you. Your response has been recorded.','Hvala. Vaš odgovor je zabeležen.'],id:['Response ID','ID odgovora'],demo:['Demo mode: no server is configured, so your answers were saved only in this browser.','Probni režim: server nije podešen, pa su odgovori sačuvani samo u ovom pregledaču.'],err:['Could not reach the server. Your answers were kept in this browser.','Server nije dostupan. Odgovori su sačuvani u ovom pregledaču.'],again:['Start again','Počni ponovo'],opt:['Select all that apply','Izaberite sve što važi'],one:['Choose one','Izaberite jedno']};
+const EN={},$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+let lang='en',st={i:0,a:{},c:{}};
+const IX={en:0,sr:1,ru:2},s_=k=>S[k][IX[lang]],tx=a=>a[IX[lang]];
+/* ===== CONTENT: Russian ===== */
+const RU={n1:'Вопрос',n2:'Направления',n3:'Метод',n4:'Технологии',n5:'Участие',n6:'Об институте',
+h_eye:'Независимая исследовательская инициатива, Белград, Сербия',h_title:'Поймите свой бизнес глубже цифр.',
+h_sub:'Любой бизнес производит ценную информацию. Значительная её часть остаётся разрозненной, неизмеренной или неиспользованной. Мы изучаем, как работают организации, находим информационные пробелы и ищем способы сделать бизнес-процессы более прозрачными, измеримыми и эффективными.',
+cta1:'Пройти оценку бизнеса',cta2:'Узнать о нашем подходе',h_note:'Около 4 минут. По умолчанию анонимно. Технические знания не нужны.',
+q_title:'Что происходит между цифрами?',q_lead:'Финансовые результаты и стандартные отчёты редко показывают полную картину повседневной работы. Вот вопросы, на которые многим компаниям трудно ответить:',
+q1:'Где теряются потенциальные клиенты и обращения?',q2:'Какие процессы занимают больше времени, чем ожидается?',q3:'Какая информация собирается, но не используется?',q4:'Какие решения зависят от неполных или устаревших данных?',q5:'Где люди или оборудование задействованы не полностью?',q6:'Какие проблемы становятся видны, только когда уже нанесли ущерб?',q7:'Какие важные события вообще не измеряются?',
+a_title:'Пять направлений исследования',
+a1n:'Клиенты и коммерческие процессы',a1d:'Как клиенты приходят, покупают и возвращаются.',a1e:'Потерянные обращения, эффективность продаж, удержание, поведение клиентов.',
+a2n:'Операции и рабочие процессы',a2d:'Как работа на самом деле движется по компании.',a2e:'Задержки, дублирование, узкие места, ручные операции.',
+a3n:'Люди и организационные процессы',a3d:'Как между людьми распределяются усилия и информация.',a3e:'Распределение нагрузки, зависимости, внутренний обмен информацией.',
+a4n:'Активы и инфраструктура',a4d:'Как оборудование и физические условия влияют на результат.',a4e:'Загрузка, простои, энергопотребление, мониторинг датчиками.',
+a5n:'Данные и принятие решений',a5d:'Доходит ли нужная информация до нужного решения.',a5e:'Доступность и качество данных, отчётность, прогнозы, метрики.',
+m_title:'Как мы исследуем',m_lead:'Сначала мы понимаем, как работает бизнес, и только потом думаем о технологиях.',
+m1n:'Изучение',m1d:'Понимаем компанию, её цели, существующие процессы и операционные трудности.',m2n:'Карта',m2d:'Выявляем источники информации, ручные действия, зависимости, недостающие данные и узкие места.',m3n:'Оценка',m3d:'Определяем, какие проблемы выиграют от лучшего измерения, сбора данных, интеграции или автоматизации.',m4n:'Разработка',m4d:'Исследуем и тестируем подходящие решения: от простых изменений в процессах до индивидуальных систем данных, интеллектуальных агентов и мониторинга на датчиках.',
+t_title:'От исследования к технологиям',t_lead:'Технология — возможный метод, а не отправная точка. Вот подходы, которые мы можем изучить, когда проблема понята.',
+t1n:'Сбор данных',t1d:'Фиксация информации, которую бизнес сейчас не измеряет.',t2n:'Интеграция систем',t2d:'Связывание существующего ПО, баз данных, таблиц и бизнес-приложений.',t3n:'Автоматизация процессов',t3d:'Сокращение повторяющейся ручной работы и автоматизация предсказуемых процессов.',t4n:'ИИ и интеллектуальные агенты',t4d:'Извлечение, классификация и упорядочивание информации из сообщений, документов и других неструктурированных источников.',t5n:'Умный мониторинг',t5d:'Датчики и подключённые устройства помогают понять работу оборудования, условия среды и использование ресурсов.',t6n:'Аналитика и отчётность',t6d:'Превращение сырой информации в показатели, отчёты, прогнозы и оповещения.',
+d_t:'Схема: таблицы, программы, сообщения и датчики превращаются в структурированные данные, а затем в показатели, отчёты и оповещения.',d1:'Таблицы',d2:'Бизнес-ПО',d3:'Сообщения и документы',d4:'Датчики и устройства',d5:'Данные',d6:'Показатели',d7:'Отчёты',d8:'Оповещения',
+p_title:'Помогите нам понять, как на самом деле работает ваш бизнес.',p_lead:'Мы проводим независимое исследование бизнес-процессов, потоков информации и операционных трудностей. Ваш опыт поможет выявить проблемы, которые часто остаются невидимыми в обычной бизнес-отчётности.',
+p1:'Около 4 минут.',p2:'Технические знания не требуются.',p3:'Финансовые документы и доступ к системам не нужны.',p4:'Ответы помогают сформировать исследовательскую базу и найти возможности для дальнейшего изучения.',p_btn:'Пройти оценку бизнеса',
+ab_title:'Сначала исследование, потом решения.',ab1:'IBPR — независимая исследовательская инициатива, изучающая, как компании собирают информацию, управляют операциями и принимают решения.',ab2:'Нас интересует разрыв между тем, как организации работают, и тем, насколько хорошо они могут наблюдать, измерять и улучшать свои процессы.',ab3:'Наше исследование начинается с реальных операционных трудностей, а не с заранее выбранных технологий.',ab4:'Инициатива на раннем этапе: мы развиваем исследовательскую методологию и выстраиваем отношения с компаниями.',
+f_title:'Лучшее понимание. Лучшие решения.',f_sub:'Начните с вопроса о вашем бизнесе. Ответы могут открыть возможности, о которых вы не задумывались.',f_btn:'Принять участие в исследовании',
+ft_c:'Контактные данные будут опубликованы здесь после проверки.',pv_s:'Уведомление о конфиденциальности (черновик)',pv1:'Мы собираем ответы о бизнес-процессах, чтобы понять типичные операционные проблемы. Ответы хранятся в структурированном виде, анализируются в обобщённом виде и никогда не публикуются по отдельности. Имя и email сохраняются только при отдельном согласии и используются лишь для связи по этому исследованию. Запросить доступ к данным или их удаление можно по указанным выше контактам.',pv2:'Черновик: перед запуском необходимо проверить на соответствие сербскому и европейскому законодательству о защите данных.'};
+const D={sr:SR,ru:RU};
+const RS={next:'Продолжить',back:'Назад',send:'Отправить',of:'из',ph:'Опишите в одном-двух предложениях (без конфиденциальных данных)',name:'Имя',email:'Email',iv:'Готов(а) к короткому исследовательскому интервью',cs:'Согласен(на), чтобы со мной связались по поводу исследования. Без этого имя и email не сохраняются.',th:'Спасибо. Ваш ответ записан.',id:'ID ответа',demo:'Демо-режим: сервер не подключён, поэтому ответы сохранены только в этом браузере.',err:'Сервер недоступен. Ответы сохранены в этом браузере.',again:'Начать заново',opt:'Выберите всё подходящее',one:'Выберите один вариант'};
+/* questionnaire, Russian: [question, [options in the same order as Q]] */
+const RQ={food_issues:['В вашем заведении бывает что-то из этого?',['Продукты выбрасываются или портятся','Заказы из разных каналов (зал, телефон, доставка) обрабатываются отдельно','Заказы поставщикам идут по телефону или в мессенджерах','Остатки считаются вручную','Себестоимость каждого блюда неизвестна','График персонала составляется вручную','Журналы температуры и гигиены ведутся на бумаге','Теряются брони или гости не приходят','Ничего из перечисленного']],sector:['В какой отрасли работает ваш бизнес?',['Розница и торговля','Производство','Профессиональные услуги','Отели и туризм','Общепит: рестораны, кафе, кейтеринг','Логистика и транспорт','Другое']],size:['Сколько человек работает в вашей компании?',['1–9','10–49','50–249','250 и более']],role:['Какова ваша роль?',['Владелец / основатель','Директор','Руководитель операций','Руководитель отдела','Другое']],challenges:['Что из этого вам знакомо?',['Теряются клиенты, заказы или обращения','Процессы занимают слишком много времени','Дублирование или ручная работа','Данные собираются, но не используются','Решения опираются на устаревшую информацию','Оборудование простаивает или недозагружено','Важные события не измеряются']],downtime_detect:['Как вы обычно узнаёте о проблемах с оборудованием?',['Сотрудники замечают и сообщают','Только когда падает выработка','Есть частичный мониторинг','Не уверен(а)']],sources:['Где сегодня хранится информация вашего бизнеса?',['Таблицы','Бухгалтерское / ERP-ПО','Почта и мессенджеры','Бумага','Телефонные звонки','Память сотрудников','Касса / POS-система']],manual_hours:['Сколько часов в неделю уходит на повторяющуюся ручную работу?',['Менее 5','5–15','15–40','Более 40','Не уверен(а)']],frequency:['Как часто возникают эти проблемы?',['Ежедневно','Еженедельно','Ежемесячно','Редко']],impact:['Насколько они влияют на результаты?',['Незначительно','Умеренно','Существенно','Трудно сказать']],measure:['Что вы больше всего хотели бы измерять?',['Обращения клиентов и их исходы','Время на процесс','Нагрузку на сотрудников','Работу и простои оборудования','Затраты и энергию','Запасы, списания и себестоимость блюд']],comment:['Необязательно: какую одну проблему вы бы решили в первую очередь?'],contact:['Необязательно: оставайтесь на связи']};
+Object.entries(RS).forEach(([k,v])=>S[k][2]=v);
+Object.entries(RQ).forEach(([id,[q,o]])=>{const s=Q.find(x=>x.id==id);s.q[2]=q;(o||[]).forEach((l,i)=>s.o[i][3]=l)});
+$$('[data-t]').forEach(e=>EN[e.dataset.t]=e.innerHTML);
+const TITLE=['IBPR — Institute for Business Process Research','IBPR — Institut za istraživanje poslovnih procesa','IBPR — Институт исследования бизнес-процессов'];
+function setLang(l){lang=l;document.documentElement.lang={en:'en',sr:'sr-Latn',ru:'ru'}[l];document.title=tx(TITLE);
+$$('[data-t]').forEach(e=>{const k=e.dataset.t,d=D[l];e.innerHTML=d&&d[k]?d[k]:EN[k]});
+$$('[data-l]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l==l));if(!$('#quiz').hidden)draw()}
+$$('[data-l]').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+
+/* hero visualization: nodes and information flows */
+(function(){const P=[[80,120],[210,60],[330,150],[470,90],[540,230],[400,300],[250,250],[120,330],[200,440],[350,430],[500,420],[300,540],[60,500]],
+E=[[0,1],[1,2],[2,3],[3,4],[2,5],[5,6],[6,0],[6,7],[7,8],[8,9],[9,5],[9,10],[10,4],[8,11],[7,12],[11,9]],A=[[1,2],[2,5],[5,6],[9,5],[3,4]];
+$('#net').innerHTML=E.map(([a,b])=>`<line x1="${P[a][0]}" y1="${P[a][1]}" x2="${P[b][0]}" y2="${P[b][1]}"/>`).join('')+
+A.map(([a,b])=>`<line class="a" x1="${P[a][0]}" y1="${P[a][1]}" x2="${P[b][0]}" y2="${P[b][1]}"/>`).join('')+
+P.map((p,i)=>`<circle class="${i==5?'h':''}" cx="${p[0]}" cy="${p[1]}" r="${i==5?7:4}"/>`).join('')})();
+
+/* questionnaire */
+const act=()=>Q.filter(s=>!s.if||s.if(st.a));
+function draw(){const box=$('#quiz'),L=act(),s=L[st.i],n=L.length;
+if(st.done){box.innerHTML=`<h3>${s_('th')}</h3><p>${s_('id')}: <b>${st.done}</b></p><p class="small">${st.msg}</p><button class="btn ghost" id="again">${s_('again')}</button>`;$('#again').onclick=()=>{st={i:0,a:{},c:{}};draw()};return}
+let h=`<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${st.i+1}"><i style="width:${(st.i+1)/n*100}%"></i></div><p class="small">${st.i+1} ${s_('of')} ${n}</p><fieldset><legend tabindex="-1" id="lg">${tx(s.q)}</legend>`;
+if(s.t=='single'||s.t=='multi'){const m=s.t=='multi',v=st.a[s.id]||(m?[]:'');h+=`<p class="small">${s_(m?'opt':'one')}</p>`+s.o.map(o=>`<label class="opt"><input type="${m?'checkbox':'radio'}" name="${s.id}" value="${o[0]}" ${(m?v.includes(o[0]):v==o[0])?'checked':''}><span>${o[IX[lang]+1]}</span></label>`).join('')}
+else if(s.t=='text')h+=`<textarea id="tx" rows="4" maxlength="600" aria-label="${tx(s.q)}" placeholder="${s_('ph')}">${st.a.comment||''}</textarea>`;
+else h+=`<label class="f">${s_('name')}<input type="text" id="c_n" autocomplete="name" value="${st.c.n||''}"></label><label class="f">${s_('email')}<input type="email" id="c_e" autocomplete="email" value="${st.c.e||''}"></label><label class="opt"><input type="checkbox" id="c_i" ${st.c.i?'checked':''}><span>${s_('iv')}</span></label><label class="opt"><input type="checkbox" id="c_c" ${st.c.c?'checked':''}><span>${s_('cs')}</span></label>`;
+const last=st.i==n-1;h+=`</fieldset><div class="nav2"><button class="btn ghost" id="bk" ${st.i?'':'disabled'}>${s_('back')}</button><button class="btn" id="nx">${s_(last?'send':'next')}</button></div>`;
+box.innerHTML=h;const ok=()=>{const nx=$('#nx');if(s.t=='single'||s.t=='multi')nx.disabled=!(st.a[s.id]&&st.a[s.id].length)};
+$$('#quiz .opt input[name]').forEach(i=>i.onchange=()=>{st.a[s.id]=s.t=='multi'?$$('#quiz input[name]:checked').map(x=>x.value):i.value;ok()});ok();
+$('#bk').onclick=()=>{save(s);st.i--;draw();$('#lg').focus()};$('#nx').onclick=()=>{save(s);last?submit():(st.i++,draw(),$('#lg').focus())}}
+function save(s){if(s.t=='text')st.a.comment=$('#tx').value.trim();if(s.t=='contact')st.c={n:$('#c_n').value.trim(),e:$('#c_e').value.trim(),i:$('#c_i').checked,c:$('#c_c').checked}}
+async function submit(){const id='R-'+(crypto.randomUUID?crypto.randomUUID().slice(0,8):Math.random().toString(36).slice(2,10)),c=st.c,rec={id,ts:new Date().toISOString(),lang,...st.a,consent_followup:!!c.c,interview:!!(c.c&&c.i)};
+if(c.c){rec.name=c.n;rec.email=c.e}
+if(CFG.endpoint){try{const r=await fetch(CFG.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(rec)});if(!r.ok)throw 0;st.msg=''}catch(e){st.msg=s_('err')}}else st.msg=s_('demo');
+try{const d=JSON.parse(localStorage.getItem(CFG.key)||'[]');d.push(rec);localStorage.setItem(CFG.key,JSON.stringify(d))}catch(e){}
+st.done=id;draw()}
+function start(){$('#intro').hidden=true;$('#quiz').hidden=false;draw();$('#lg')&&$('#lg').focus({preventScroll:true})}
+$('#start').onclick=start;$$('[data-start]').forEach(a=>a.addEventListener('click',()=>setTimeout(start,0)));
+</script>
+</body>
+</html>
